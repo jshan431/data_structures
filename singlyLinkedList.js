@@ -71,6 +71,28 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+    //define a get function that retrieves a node by it's index position
+    get(index){
+        if(index < 0 || index >= this.length){
+          return null;
+        }
+        let counter = 0;
+        let currentNode = this.head;
+        while(counter !== index){
+          currentNode = currentNode.next;
+          counter++
+        }
+        return currentNode;
+    }
+    //Define a set method
+    set(val, index){
+        let foundNode = this.get(index);
+        if(foundNode){
+          foundNode.val = val;
+          return true;
+        }
+        return false;
+    }
     //Print all of the items in the linked List
     print(){
         var arr = [];

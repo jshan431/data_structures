@@ -10,3 +10,6 @@ newList.print();
 console.log("shifting");
 newList.shift();
 newList.print();
+console.log("Using set");
+newList.set(200, 0);
+newList.print();
