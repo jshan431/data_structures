@@ -93,6 +93,63 @@ class SinglyLinkedList{
         }
         return false;
     }
+    //Define a method called insert
+    insert(val, index){
+        if(index < 0 || index > this.length){
+          return false;
+        }
+        if(index === this.length){
+          this.push(val);
+          return true;
+        }
+        else if(index === 0){
+          this.unshift(val);
+          return true;
+        }
+        else{
+          let newNode = new Node(val);
+          let prevNode = this.get(index - 1);
+          let temp = prevNode.next;
+          newNode.next = temp;
+          prevNode.next = newNode;
+          this.length++;
+          return true;
+        }
+    }
+    //define a method called remove
+    remove(index){
+        if(index < 0 || index > this.length){
+          return undefined;
+        }
+        if(index === this.length - 1){
+          return this.pop();
+        }
+        else if(index === 0){
+          return this.shift();
+        }
+        else{
+          let prevNode = this.get(index - 1);
+          let removed = prevNode.next;
+          prevNode.next = removed.next;
+          this.length--;
+          return removedNode;
+        }
+    }
+    //define a method called reverse
+    reverse(){
+      let node = this.head;
+      this.head = this.tail;
+      this.tail = node;
+      let next;
+      let prev = null;
+      for(let i = 0; i < this.length; i++){
+        next = node.next;
+        node.next = prev;
+        prev = node;
+        node = next;
+      }
+      return this;
+    }
     //Print all of the items in the linked List
     print(){
         var arr = [];

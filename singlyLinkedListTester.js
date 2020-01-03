@@ -13,3 +13,13 @@ newList.print();
 console.log("Using set");
 newList.set(200, 0);
 newList.print();
+newList.push(550);
+newList.push(888);
+newList.print();
+console.log("Inserting at index 1");
+newList.insert(603, 1);
+newList.print();
+console.log("reversing a linked list");
+newList.reverse();
+
+newList.print();
